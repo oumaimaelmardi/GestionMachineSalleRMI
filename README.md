@@ -31,6 +31,8 @@ Suppression d'une salle
 <img width="960" alt="salle-3" src="https://github.com/oumaimaelmardi/GestionMachineSalleRMI/assets/82413301/8644c636-6e6a-4215-a860-71ccff53c8b9">
 <img width="960" alt="salle-4" src="https://github.com/oumaimaelmardi/GestionMachineSalleRMI/assets/82413301/6c9518e0-3f27-45bf-b54b-7f6cc36142b6">
 
+Filtrage de machines par salle
+<img width="960" alt="filtrage" src="https://github.com/oumaimaelmardi/GestionMachineSalleRMI/assets/82413301/4e928e0a-9ef2-428b-bc12-72c37bf7ef64">
 
 Video démonstrative
 
