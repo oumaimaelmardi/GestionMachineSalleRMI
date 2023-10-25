@@ -23,13 +23,14 @@ Ajout d'une salle
 
 Modification d'une salle
 
-<img width="960" alt="salle-3" src="https://github.com/oumaimaelmardi/GestionMachineSalleRMI/assets/82413301/8644c636-6e6a-4215-a860-71ccff53c8b9">
-<img width="960" alt="salle-4" src="https://github.com/oumaimaelmardi/GestionMachineSalleRMI/assets/82413301/6c9518e0-3f27-45bf-b54b-7f6cc36142b6">
+<img width="959" alt="salle-5" src="https://github.com/oumaimaelmardi/GestionMachineSalleRMI/assets/82413301/76e08c8f-3340-436b-b541-39b26babf890">
+<img width="955" alt="salle-6" src="https://github.com/oumaimaelmardi/GestionMachineSalleRMI/assets/82413301/c2294f3b-ca57-49e9-a92a-85be026d73fd">
 
 Suppression d'une salle
 
-<img width="959" alt="salle-5" src="https://github.com/oumaimaelmardi/GestionMachineSalleRMI/assets/82413301/76e08c8f-3340-436b-b541-39b26babf890">
-<img width="955" alt="salle-6" src="https://github.com/oumaimaelmardi/GestionMachineSalleRMI/assets/82413301/c2294f3b-ca57-49e9-a92a-85be026d73fd">
+<img width="960" alt="salle-3" src="https://github.com/oumaimaelmardi/GestionMachineSalleRMI/assets/82413301/8644c636-6e6a-4215-a860-71ccff53c8b9">
+<img width="960" alt="salle-4" src="https://github.com/oumaimaelmardi/GestionMachineSalleRMI/assets/82413301/6c9518e0-3f27-45bf-b54b-7f6cc36142b6">
+
 
 Video démonstrative
 
