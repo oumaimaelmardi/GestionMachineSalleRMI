@@ -96,7 +96,12 @@ public class Main extends javax.swing.JFrame {
         editMenu.add(salle);
 
         pasteMenuItem.setMnemonic('p');
-        pasteMenuItem.setText("Paste");
+        pasteMenuItem.setText("Filrage");
+        pasteMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pasteMenuItemActionPerformed(evt);
+            }
+        });
         editMenu.add(pasteMenuItem);
 
         deleteMenuItem.setMnemonic('d');
@@ -152,6 +157,13 @@ public class Main extends javax.swing.JFrame {
         desktopPane.add(mf);
         mf.show();
     }//GEN-LAST:event_salleActionPerformed
+
+    private void pasteMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pasteMenuItemActionPerformed
+        // TODO add your handling code here:
+          FiltrageForm mf = new FiltrageForm();
+        desktopPane.add(mf);
+        mf.show();
+    }//GEN-LAST:event_pasteMenuItemActionPerformed
 
     /**
      * @param args the command line arguments

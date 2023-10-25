@@ -35,7 +35,9 @@ public class Serveur {
             Naming.bind("rmi://localhost:1099/salle", salle);
              for (Salle s:salle.findAll()){
                  System.out.println(s);
+                   System.out.println("hereé"+dao.findMachinesBySalle(s));
              }
+           
             System.out.println("En attente des clients");
             
         } catch (RemoteException ex) {

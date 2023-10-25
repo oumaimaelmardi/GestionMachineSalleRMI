@@ -7,6 +7,7 @@ package service;
 
 import dao.IDao;
 import entities.Machine;
+import entities.Salle;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.List;
@@ -136,6 +137,27 @@ public class MachineService extends UnicastRemoteObject implements IDao<Machine>
             }
         }
         return machines;
+    }
+
+    @Override
+    public List<Machine> findMachinesBySalle(Salle s) throws RemoteException {
+       
+        Session session = null;
+        Transaction tx = null;
+        List<Machine> machines = null;
+        try {
+            session = HibernateUtil.getSessionFactory().openSession();
+            tx = session.beginTransaction();
+            machines  = session.getNamedQuery("findMachinesBySalle").setParameter("idSalle", s).list();
+            tx.commit();
+        } catch (HibernateException ex) {
+            if(tx != null)
+                tx.rollback();
+        }finally {
+            if(session != null)
+                session.close();
+        }
+        return machines; //To change body of generated methods, choose Tools | Templates.
     }
 
 }

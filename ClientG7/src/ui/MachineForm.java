@@ -69,6 +69,7 @@ public class MachineForm extends javax.swing.JInternalFrame {
                     m.getSalle()
                 });
             }
+            
         } catch (RemoteException ex) {
             Logger.getLogger(MachineForm.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -79,6 +80,7 @@ public void loadSalle(){
             for (Salle s : salleList){
                 
                 jComboBox1.addItem(s);
+               
             }
         } catch (RemoteException ex) {
             Logger.getLogger(MachineForm.class.getName()).log(Level.SEVERE, null, ex);
@@ -132,8 +134,6 @@ public void loadSalle(){
         jLabel3.setText("Prix : ");
 
         jLabel4.setText("Salle");
-
-        jComboBox1.setSelectedIndex(-1);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -210,7 +210,7 @@ public void loadSalle(){
                     .addComponent(bnDelete)
                     .addComponent(bnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(93, Short.MAX_VALUE))
+                .addContainerGap(165, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -248,13 +248,13 @@ public void loadSalle(){
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 836, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(57, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -296,6 +296,11 @@ public void loadSalle(){
               Salle salle = (Salle) jComboBox1.getSelectedItem();
             
             dao.create(new Machine(ref, marque, prix,salle));
+             JOptionPane.showMessageDialog(this, "Machine a été bien ajoutée");
+             txtRef.setText("");
+                txtMarque.setText("");
+                 txtPrix.setText("");
+                jComboBox1.setSelectedItem(null);
             load();
         } catch (RemoteException ex) {
             Logger.getLogger(MachineForm.class.getName()).log(Level.SEVERE, null, ex);
@@ -313,7 +318,11 @@ public void loadSalle(){
                     Logger.getLogger(MachineForm.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 JOptionPane.showMessageDialog(this, "Machine a été supprimé avec succès !");
-                                        load();
+                 txtRef.setText("");
+                txtMarque.setText("");
+                 txtPrix.setText("");
+                jComboBox1.setSelectedItem(null);
+                   load();
 
                             
             }
@@ -332,7 +341,7 @@ public void loadSalle(){
                 txtRef.setText("");
                 txtMarque.setText("");
                  txtPrix.setText("");
-                jComboBox1.getItemAt(0);
+                jComboBox1.setSelectedItem(null);
                 load();
             }
         } catch (RemoteException ex) {
@@ -354,7 +363,7 @@ public void loadSalle(){
         txtRef.setText(model.getValueAt(machinesList.getSelectedRow(), 1).toString());
         txtMarque.setText(model.getValueAt(machinesList.getSelectedRow(), 2).toString());
         txtPrix.setText(model.getValueAt(machinesList.getSelectedRow(), 3).toString());
-          jComboBox1.getModel().setSelectedItem(model.getValueAt(machinesList.getSelectedRow(), 4));
+         jComboBox1.getModel().setSelectedItem(model.getValueAt(machinesList.getSelectedRow(), 4));
    
     }//GEN-LAST:event_machinesListMouseClicked
 

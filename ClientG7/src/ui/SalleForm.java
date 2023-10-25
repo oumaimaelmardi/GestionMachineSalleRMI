@@ -218,8 +218,8 @@ public class SalleForm extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(101, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(121, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -227,23 +227,20 @@ public class SalleForm extends javax.swing.JInternalFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(44, 44, 44)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(39, Short.MAX_VALUE))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(80, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(42, 42, 42)
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(217, 217, 217))
+                .addGap(193, 193, 193))
         );
 
         pack();
@@ -251,31 +248,19 @@ public class SalleForm extends javax.swing.JInternalFrame {
 
     private void updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateActionPerformed
         // TODO add your handling code here:
-         int selectedRow = sallesList.getSelectedRow();
-
-    if (selectedRow >= 0) {
-        int id = Integer.parseInt(model.getValueAt(selectedRow, 0).toString()); 
-        String code = JCode.getText();
-        
+        String code= JCode.getText();
+     
      
         try {
-          
-            Salle salle = dao.findById(id);
-            salle.setCode(code);
-           
-
-            boolean updated = dao.update(salle);
-
-            if (updated) {
+            if(dao.update(new Salle(id,code))){
+                JOptionPane.showMessageDialog(this, "Salle a été bien modifié");
                 JCode.setText("");
-                
+             
                 load();
-            } else {
-                JCode.setText("Update failed");
             }
         } catch (RemoteException ex) {
             Logger.getLogger(MachineForm.class.getName()).log(Level.SEVERE, null, ex);
-        }}
+        }
     }//GEN-LAST:event_updateActionPerformed
 
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
@@ -286,6 +271,7 @@ public class SalleForm extends javax.swing.JInternalFrame {
            
             
             dao.create(new Salle(id, ref));
+              JOptionPane.showMessageDialog(this, "Salle a été bien ajoutée");
             load();
             JCode.setText("");
         } catch (RemoteException ex) {
