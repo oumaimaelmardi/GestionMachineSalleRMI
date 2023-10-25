@@ -36,4 +36,4 @@ Filtrage de machines par salle
 
 Video démonstrative
 
-https://github.com/oumaimaelmardi/GestionMachineSalleRMI/assets/82413301/8206f3e0-049b-4e5d-ad3c-b4bad2453b4e
+https://github.com/oumaimaelmardi/GestionMachineSalleRMI/assets/82413301/27995bc3-4e6e-42cb-b959-71893e60b6c2
